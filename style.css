@@ -1,0 +1,73 @@
+#message-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#message:hover {
+    background-color: #2980b9;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Added to stack the message and board vertically */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    background-color: #ddd;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cell:hover {
+    background-color: #ccc;
+}
+
+.cell[data-row="0"] {
+    border-top: none;
+}
+
+.cell[data-row="2"] {
+    border-bottom: none;
+}
+
+.cell[data-col="0"] {
+    border-left: none;
+}
+
+.cell[data-col="2"] {
+    border-right: none;
+}
